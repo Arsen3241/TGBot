@@ -16,17 +16,17 @@ async def echo_message(message: types.Message):
     # await message.reply(
     #     text="Aдольф гитлер прав"
     # )
-    if message.text:
+    if message.text == "Aдольф гитлер не прав":
+            await bot.send_message(
+                chat_id=message.chat.id,
+                text="Ты не прав, адольф гитлер был прав",
+                reply_to_message_id=message.message_id,
+            )
+    elif message.text:
         # await message.reply(text=message.text)
         await bot.send_message(
             chat_id=message.chat.id,
             text="Я твою маму ебал",
-            reply_to_message_id=message.message_id,
-        )
-    elif message.text == "Aдольф гитлер не прав":
-        await bot.send_message(
-            chat_id=message.chat.id,
-            text="Ты не прав, адольф гитлер был прав",
             reply_to_message_id=message.message_id,
         )
     elif message.animation:
